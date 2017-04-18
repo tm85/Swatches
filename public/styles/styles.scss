@@ -1,0 +1,48 @@
+@import 'normalize';
+@import 'mixins';
+/* Styles */
+$twoPxBorder: 2px solid;
+$greyBorderColor : lightgrey;
+
+section {
+    margin-top: 35px;
+}
+#product {
+    @include flexCenterVertical;
+
+    #product_thumbnail {
+        @include flexCenterVertical;
+        img {
+            max-width: (100% / 3);
+            border: $twoPxBorder $greyBorderColor;
+            padding:5px;
+        }
+    }
+    #product_swatches {
+        margin-top:15px;
+        text-align:center;
+        .swatch_color {
+            display:inline-block;
+            width:25px;
+            height:25px;
+            margin: 10px;
+            border: $twoPxBorder $greyBorderColor;
+            cursor:pointer;
+            text-decoration:none;
+        }
+    }
+}
+button {
+    margin:5px;
+}
+
+@media only screen and (max-width:767px) {
+  #product {     
+      #product_thumbnail {
+        img {
+            max-width: (100% / 2);
+        }
+    }
+  }
+}
+
